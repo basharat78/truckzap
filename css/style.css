@@ -1860,3 +1860,123 @@
     border-color: var(--pl);
     box-shadow: 0 15px 30px var(--pg);
   }
+
+  
+  /* ═══════════════════════════════
+     PARTNERS SLIDER
+  ═══════════════════════════════ */
+  .partners {
+    padding: 0;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    margin-top: -30px;
+    /* Overlap with hero for tighter look */
+  }
+
+  .partners-wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .partners-content {
+    background: rgba(12, 18, 45, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 25px 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .partners-label {
+    font-size: .85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pl);
+    white-space: nowrap;
+    padding-right: 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .marquee {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    animation: marqueeRun 40s linear infinite;
+  }
+
+  .marquee:hover .marquee-content {
+    animation-play-state: paused;
+  }
+
+  .partner-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    opacity: .6;
+    transition: all .3s ease;
+    cursor: default;
+  }
+
+  .partner-box i {
+    font-size: 1.6rem;
+  }
+
+  .partner-box span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .partner-box:hover {
+    opacity: 1;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  @keyframes marqueeRun {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .partners-content {
+      flex-direction: column;
+      gap: 20px;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .partners-label {
+      border-right: none;
+      padding-right: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 15px;
+      width: 100%;
+    }
+
+    .marquee-content {
+      gap: 40px;
+    }
+  }
