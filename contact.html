@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truckzap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
+
+ 
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav>
+     <div class="nav-bg"></div>
+    <a href="/index.html" class="nav-logo">Truckzap</a>
+   
+    <div class="nav-hamburger" id="navHamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+      </div>
+    <ul class="nav-links" id="navLinks">
+      <!-- additional close button for mobile panel -->
+      <!-- <li class="close-menu">
+        <button id="closeMenuBtn" aria-label="Close menu">&times;</button>
+      </li> -->
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#truck-types">Trucks</a></li>
+
+
+      <li><a href="#testimonials">Testimonials</a></li>
+            <li class="has-dropdown">
+        <a href="#services">Services<i class="bi bi-chevron-down dropdown-icon"></i></a>
+      <ul class="sub-menu">
+        <li><a href="#">Truck Dispatching</a></li>
+        <li><a href="#">ELD</a></li>
+        <li><a href="#">Factoring</a></li>
+        </ul>
+    </li>
+      <li><a href="#contact">Contact</a></li>
+        <!-- <li class="has-dropdown">
+        <a href="#contact">Contact<i class="bi bi-chevron-down dropdown-icon"></i></a>
+        <ul class="sub-menu">
+          <li><a href="tel:+13074667222">(307) 466-7222</a></li>
+          <li><a href="mailto:support@truckzap.com">Email Us</a></li>
+        </ul>
+      </li> -->
+      <li><a href="tel:+13074667222" class="nav-btn mobile-btn"><span>(307) 466-7222</span></a></li>
+    </ul>
+    <a href="tel:+13074667222" class="nav-btn desktop-btn"><span>(307) 466-7222</span></a>
+  </nav>
+
+ 
+
+
+  </section>
+
+  <footer class="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col" data-aos="fade-up">
+                <a href="#" class="nav-logo" style="display:inline-block; margin-bottom:20px;">Truckzap</a>
+                <p style="color:var(--muted); line-height: 1.6;">
+                     Providing top-tier dispatching services for trucking companies across the USA. Your success is our mission.
+                </p>
+            </div>
+
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+            <h4>Our Services</h4>
+            <ul>
+                <li><a href="#">Dispatching</a></li>
+                <li><a href="#">Factoring</a></li>
+                <li><a href="#">ELD</a></li>
+            </ul>
+        </div>
+        <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+            <h4>Contact Us</h4>
+            <ul style="color:var(--muted);">
+                <li style="margin-bottom: 12px;"><i class="bi bi-geo-alt" style="color:var(--p); margin-right:10px;"></i>
+              Sheridan, WY</li>
+            <li style="margin-bottom: 12px;"><i class="bi bi-telephone" style="color:var(--p); margin-right:10px;"></i>
+              (307) 466-7222</li>
+            <li style="margin-bottom: 12px;"><i class="bi bi-envelope" style="color:var(--p); margin-right:10px;"></i>
+              support@truckzap.com</li>
+            </ul>
+        </div>
+       </div>
+       <div class="footer-bottom">
+        &copy; 2026 Truck Zap Dispatching LLC. All rights reserved.
+       </div>
+    </div>
+  </footer>
+   <button id="scrollTop" class="scroll-top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+   
+</body>
+
+</html>
