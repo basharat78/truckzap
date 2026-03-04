@@ -9,52 +9,51 @@
     rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
     rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/style.css">
-     
-     
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <body>
 
   <!-- Custom cursor -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
+  <!-- <div id="cursor"></div>
+  <div id="cursor-ring"></div> -->
 
   <!-- Particle canvas -->
   <canvas id="bgCanvas"></canvas>
 
   <!-- ══ NAVBAR ══ -->
   <nav>
-     <div class="nav-bg"></div>
+    <div class="nav-bg"></div>
     <a href="index.html" class="nav-logo">Truckzap</a>
-   
+
     <div class="nav-hamburger" id="navHamburger">
       <span></span>
       <span></span>
       <span></span>
-      </div>
+    </div>
     <ul class="nav-links" id="navLinks">
       <!-- additional close button for mobile panel -->
       <!-- <li class="close-menu">
         <button id="closeMenuBtn" aria-label="Close menu">&times;</button>
       </li> -->
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#truck-types">Trucks</a></li>
 
 
       <li><a href="#testimonials">Testimonials</a></li>
-            <li class="has-dropdown">
+      <li class="has-dropdown">
         <a href="#services">Services<i class="bi bi-chevron-down dropdown-icon"></i></a>
-      <ul class="sub-menu">
-        <!-- <li><a href="#">Truck Dispatching</a></li> -->
-        <li><a href="#">ELD</a></li>
-        <li><a href="#">Factoring</a></li>
+        <ul class="sub-menu">
+          <li><a href="eld.html">ELD</a></li>
+          <li><a href="factoring.html">Factoring</a></li>
         </ul>
-    </li>
+      </li>
       <li><a href="contact.html">Contact</a></li>
-        <!-- <li class="has-dropdown">
+      <!-- <li class="has-dropdown">
         <a href="#contact">Contact<i class="bi bi-chevron-down dropdown-icon"></i></a>
         <ul class="sub-menu">
           <li><a href="tel:+13074667222">(307) 466-7222</a></li>
@@ -84,16 +83,16 @@
         <h1>Truck Zap <br><span class="typed-word" id="typedWord">Dispatching</span><br>LLC</h1>
 
         <p class="hero-desc">
-       TruckZAP is a premier truck dispatch company that specializes
-       in providing exceptional dispatch services for owner-operators 
-        and small trucking companies. 
+          TruckZAP is a premier truck dispatch company that specializes
+          in providing exceptional dispatch services for owner-operators
+          and small trucking companies.
         </p>
 
         <div class="hero-btns">
           <a href="#" class="btn-filled" id="btnFilled"><span>Get Started</span></a>
 
           <a href="#" class="btn-outline"><span>Our Work</span></a>
-          
+
 
         </div>
 
@@ -146,7 +145,8 @@
                     <stop offset="100%" stop-color="#6c5dd3" />
                   </linearGradient>
                 </defs>
-                <rect x="0.75" y="0.75" width="98.5" height="98.5" rx="8" ry="8" />
+                <rect x="0.75" y="0.75" width="98.5" height="98.5" rx="8" ry="8" fill="none" stroke="url(#borderGrad)"
+                  stroke-width="1.5" stroke-dasharray="30 10" />
               </svg>
             </div>
 
@@ -177,7 +177,7 @@
             <div>
               <div class="float-title"><span class="live-dot"></span>Live Projects</div>
               <div class="float-val">500+ Clients</div>
-           
+
             </div>
           </div>
         </div>
@@ -218,228 +218,230 @@
     </div>
   </section>
   <!-- ══ ABOUT US ══ -->
-     <section class="about" id="about" data-aos="fadeup">
+  <section class="about" id="about" data-aos="fadeup">
     <div class="container">
-        <div class="about-flex">
-            <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-                <span class="section-tag">About Our Agency</span>
-                 <h2 class="section-title">Truck Zap Dispatching LLC: <br><span style="color:var(--p)">Your Reliable
+      <div class="about-flex">
+        <div class="about-text" data-aos="fade-right" data-aos-delay="200">
+          <span class="section-tag">About Our Agency</span>
+          <h2 class="section-title">Truck Zap Dispatching LLC: <br><span style="color:var(--p)">Your Reliable
               Partner</span></h2>
-              <p class="about-desc">
-             Truck Zap Dispatching LLC is an independent truck dispatch company specializing in helping small trucking
+          <p class="about-desc">
+            Truck Zap Dispatching LLC is an independent truck dispatch company specializing in helping small trucking
             companies with 1 to 5 units. Our team of professionals is dedicated to providing high-quality dispatch
             services across the USA, ensuring that owner-operators and small fleets can focus on driving while we handle
             the logistics.
-              </p>
-              <div class="hero-btns">
-                <a href="#contact" class="btn-filled"><span>Learn More</span></a>
-              </div>
-            </div>
-               
-          <div class="about-image" data-aos="fade-left" data-aos-delay="400">
-        <img src="assets/vehicle-road.jpg" alt="About Truck Zap Dispatching LLC">
+          </p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-filled"><span>Learn More</span></a>
+          </div>
         </div>
+
+        <div class="about-image" data-aos="fade-left" data-aos-delay="400">
+          <img src="assets/vehicle-road.jpg" alt="About Truck Zap Dispatching LLC">
         </div>
-        </div>
-        </section>
+      </div>
+    </div>
+  </section>
 
 
-        <section class="services" id="services">
-        <div class="container">
-            <div style="text-align: center;" data-aos="fade-up">
-                <span class="section-tag">Our Services</span>
-                      <h2 class="section-title">Everything You Need To <br>Grow Your Business</h2>
-            </div>
-        
-             <div class="services-grid">
-       <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-icon"><i class="bi bi-receipt"></i></div>
-                <h3>Billing</h3>
-                  <p>We handle all your billing and paperwork, ensuring you get paid faster and more efficiently with zero
-                       hassle.</p>
-                   </div>
-
-                   <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-icon"><i class="bi bi-geo-alt"></i></div>
-                <h3>Personal Approach</h3>
-                <p>
-                We work closely with you to understand your preferences, routes, and goals, providing a truly customized
-            service.</p>
-                   </div>
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-icon"><i class="bi bi-people-fill"></i></div>
-                <h3>Document Management</h3>
-                <p>Keep your business organized with our comprehensive document management for safety and DOT compliance.</p>
-            </div>
-
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-icon"><i class="bi bi-bank"></i></div>
-                <h3>Factoring Services</h3>
-                <p>Access immediate cash flow for your business through our partner factoring services at competitive rates.</p>
-            </div>
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-icon"><i class="bi bi-briefcase"></i></div>
-                <h3>Rate Negotiation</h3>
-                <p>Our expert dispatchers negotiate the best possible rates for every load, maximizing your profits per mile.</p>
-            </div>
- 
-
-            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="service-icon"><i class="bi bi-headset"></i></div>
-                <h3>Safety / DOT Compliance</h3>
-                <p>We ensure you remain compliant with all FMCSA and DOT regulations, reducing risks and overhead.</p>
-            </div>
-            </div>       
-             </div>
-           </section>
-
-
-<section class="packages" id="packages">
+  <section class="services" id="services">
     <div class="container">
-
-        <div class="packages-header" data-aos="fade-up">
-            <div class="section-tag">Our Dispatching Packages</div>
-            <h2 class="packages-title">Choose The Right Package For Your Business</h2>
-        </div>
-        <div class="packages-grid">
-        <!-- Package 1 -->
-            <div class="package-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="package-icon-wrap">
-                    <div class="package-icon">
-                        <i class="bi bi-cart-dash"></i>
-                    </div>
-                </div>
-          <h3 class="package-name">M - Dispatch Category <br>(Medium Size Box Trucks)</h3>
-            <div class="package-divider"> </div>
-            <ul class="package-features">
-                <li>Long Haul Loads</li>
-                <li>Average Rate: $1.8/mile Weekly</li>
-                <li>Weekly Invoicing</li>
-                <li>Seeting up with minimum 5 brokers montly</li>
-                <li>Pre booking of 3 days</li>
-            </ul>
-            <a href="#" class="package-link">| Learn More</a>
-        </div>
-
- <!-- Package 2 -->
-<div class="package-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="package-icon-wrap">
-    <div class="package-icon">
-        <i class="bi bi-truck"></i>
-    </div>
-</div>
-<h3 class="package-name">D - Dispatch Category <br>(Hot Shot + Dry Van)</h3>
- <ul class="package-features">
-    <li>Local + Long Haul Loads</li>
-    <li>Average Rate: $1.6/mile Weekly</li>
-    <li>Weekly Invoicing</li>
-    <li>Seeting up with minimum 5 brokers montly</li>
-    <li>Pre booking of 1 day</li>
- </ul>
-<a href="#" class="package-link">| Learn More</a>
-</div>
-
-
-<div class="package-card" data-aos="fade-up" data-aos-delay="100">
-    <div class="package-icon-wrap">
-    <div class="package-icon">
-        <i class="bi bi-truck-front"></i>
-    </div>
-    </div>
-<h3 class="package-name">R - Dispatch Category <br>(Refrigenrated Trucks)</h3>
-<ul class="package-features">
-    <li>Long Haul + Specialized Loads</li>
-    <li>Average Rate: $1.8/mile Weekly</li>
-    <li>Weekly Invoicing</li>
-    <li>Seeting up with minimum 5 brokers montly</li>
-    <li>Pre booking of 3 days</li>
-</ul>
-<a href="#" class="package-link">| Learn More</a>
-</div>
-    </div>
-</section>
-
-
-<section class="truck-types" id="truck-types">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
-      <span class="section-tag">Our Fleet Expertise</span>
-      <h2 class="section-title">Truck Types We <span style="color:var(--p);">Work With</span></h2>
-      <p class="about-desc" style="max-width: 700px; margin: 0 auto;">
-           We provide specialized dispatching services for a wide variety of equipment to ensure you get the best loads
-          for your specific truck.
-      </p>
-    </div>
-
-    <div class="truck-grid">
-        <!-- Reefer -->
-      <div class="truck-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="truck-icon"><i class="bi bi-snow2"></i></div>
-        <h3>Reefers</h3>
-        <p>Temperature-controlled transport for perishable goods, requiring precision and reliability.</p>
-        <span class="truck-badge">Most Popular</span>
+      <div style="text-align: center;" data-aos="fade-up">
+        <span class="section-tag">Our Services</span>
+        <h2 class="section-title">Everything You Need To <br>Grow Your Business</h2>
       </div>
 
-        <!-- Dry Van -->
-<div class="truck-card" data-aos="fade-up" data-aos-delay="200">
-  <div class="truck-icon"><i class="bi bi-box-seam"></i></div>
-  <h3>Dry Vans</h3>
-  <p>Standard freight hauling in enclosed trailers, providing versatile solutions for general cargo.
+      <div class="services-grid">
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-icon"><i class="bi bi-receipt"></i></div>
+          <h3>Billing</h3>
+          <p>We handle all your billing and paperwork, ensuring you get paid faster and more efficiently with zero
+            hassle.</p>
+        </div>
 
-</div>
-       
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-icon"><i class="bi bi-geo-alt"></i></div>
+          <h3>Personal Approach</h3>
+          <p>
+            We work closely with you to understand your preferences, routes, and goals, providing a truly customized
+            service.</p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+          <h3>Document Management</h3>
+          <p>Keep your business organized with our comprehensive document management for safety and DOT compliance.</p>
+        </div>
+
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-icon"><i class="bi bi-bank"></i></div>
+          <h3>Factoring Services</h3>
+          <p>Access immediate cash flow for your business through our partner factoring services at competitive rates.
+          </p>
+        </div>
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-icon"><i class="bi bi-briefcase"></i></div>
+          <h3>Rate Negotiation</h3>
+          <p>Our expert dispatchers negotiate the best possible rates for every load, maximizing your profits per mile.
+          </p>
+        </div>
+
+
+        <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-icon"><i class="bi bi-headset"></i></div>
+          <h3>Safety / DOT Compliance</h3>
+          <p>We ensure you remain compliant with all FMCSA and DOT regulations, reducing risks and overhead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="packages" id="packages">
+    <div class="container">
+
+      <div class="packages-header" data-aos="fade-up">
+        <div class="section-tag">Our Dispatching Packages</div>
+        <h2 class="packages-title">Choose The Right Package For Your Business</h2>
+      </div>
+      <div class="packages-grid">
+        <!-- Package 1 -->
+        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="package-icon-wrap">
+            <div class="package-icon">
+              <i class="bi bi-cart-dash"></i>
+            </div>
+          </div>
+          <h3 class="package-name">M - Dispatch Category <br>(Medium Size Box Trucks)</h3>
+          <div class="package-divider"> </div>
+          <ul class="package-features">
+            <li>Long Haul Loads</li>
+            <li>Average Rate: $1.8/mile Weekly</li>
+            <li>Weekly Invoicing</li>
+            <li>Seeting up with minimum 5 brokers montly</li>
+            <li>Pre booking of 3 days</li>
+          </ul>
+          <a href="#" class="package-link">| Learn More</a>
+        </div>
+
+        <!-- Package 2 -->
+        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="package-icon-wrap">
+            <div class="package-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+          </div>
+          <h3 class="package-name">D - Dispatch Category <br>(Hot Shot + Dry Van)</h3>
+          <ul class="package-features">
+            <li>Local + Long Haul Loads</li>
+            <li>Average Rate: $1.6/mile Weekly</li>
+            <li>Weekly Invoicing</li>
+            <li>Seeting up with minimum 5 brokers montly</li>
+            <li>Pre booking of 1 day</li>
+          </ul>
+          <a href="#" class="package-link">| Learn More</a>
+        </div>
+
+
+        <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="package-icon-wrap">
+            <div class="package-icon">
+              <i class="bi bi-truck-front"></i>
+            </div>
+          </div>
+          <h3 class="package-name">R - Dispatch Category <br>(Refrigenrated Trucks)</h3>
+          <ul class="package-features">
+            <li>Long Haul + Specialized Loads</li>
+            <li>Average Rate: $1.8/mile Weekly</li>
+            <li>Weekly Invoicing</li>
+            <li>Seeting up with minimum 5 brokers montly</li>
+            <li>Pre booking of 3 days</li>
+          </ul>
+          <a href="#" class="package-link">| Learn More</a>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="truck-types" id="truck-types">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;" data-aos="fade-up">
+        <span class="section-tag">Our Fleet Expertise</span>
+        <h2 class="section-title">Truck Types We <span style="color:var(--p);">Work With</span></h2>
+        <p class="about-desc" style="max-width: 700px; margin: 0 auto;">
+          We provide specialized dispatching services for a wide variety of equipment to ensure you get the best loads
+          for your specific truck.
+        </p>
+      </div>
+
+      <div class="truck-grid">
+        <!-- Reefer -->
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="truck-icon"><i class="bi bi-snow2"></i></div>
+          <h3>Reefers</h3>
+          <p>Temperature-controlled transport for perishable goods, requiring precision and reliability.</p>
+          <span class="truck-badge">Most Popular</span>
+        </div>
+
+        <!-- Dry Van -->
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="truck-icon"><i class="bi bi-box-seam"></i></div>
+          <h3>Dry Vans</h3>
+          <p>Standard freight hauling in enclosed trailers, providing versatile solutions for general cargo.</p>
+
+        </div>
+
         <!-- Flatbed -->
-         <div class="truck-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="300">
           <div class="truck-icon"><i class="bi bi-truck-flatbed"></i></div>
           <h3>Flatbeds</h3>
           <p>Heavy-duty transport for oversized loads, construction equipment, and industrial machinery.
           </p>
-          </div>
+        </div>
 
-          
+
         <!-- Step Deck -->
-         <div class="truck-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="400">
           <div class="truck-icon"><i class="bi bi-ladder"></i></div>
           <h3>Step Decks</h3>
           <p>Drop-deck trailers for taller loads that need extra height clearance while maintaining stability.</p>
-           </div>
+        </div>
 
-           <!-- Box Truck -->
-            <div class="truck-card" data-aos="fade-up" data-aos-delay="500">
-              <div class="truck-icon"><i class="bi bi-box"></i></div>
-              <h3>Box Trucks</h3>
-              <p>Ideal for local deliveries and smaller loads, optimized for city logistics and quick turnarounds.</p>
-            </div>
+        <!-- Box Truck -->
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="truck-icon"><i class="bi bi-box"></i></div>
+          <h3>Box Trucks</h3>
+          <p>Ideal for local deliveries and smaller loads, optimized for city logistics and quick turnarounds.</p>
+        </div>
 
         <!-- Hot Shot -->
-         <div class="truck-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="truck-card" data-aos="fade-up" data-aos-delay="600">
           <div class="truck-icon"><i class="bi bi-lightning-charge"></i></div>
           <h3>Hot Shot</h3>
           <p>Expedited, high-priority transport using medium-duty trucks for time-critical deliveries.</p>
-                 <span class="truck-badge">Fastest Grow</span>
+          <span class="truck-badge">Fastest Grow</span>
         </div>
 
       </div>
 
 
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section class="testimonials" id="testimonials">
+  <section class="testimonials" id="testimonials">
     <div class="container">
-        <div style="text-align: center;" data-aos="fade-up">
-            <span class="section-tag">Testimonials
-            </span>
-            <h2 class="section-title">What Our Clients Says</h2>
-        </div>
+      <div style="text-align: center;" data-aos="fade-up">
+        <span class="section-tag">Testimonials
+        </span>
+        <h2 class="section-title">What Our Clients Says</h2>
+      </div>
 
 
-        <div class="testimonial-grid">
-    <!-- Testimonial 1 -->
+      <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
         <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
           <i class="bi bi-quote quote-icon"></i>
           <div class="testimonial-stars">
@@ -450,7 +452,7 @@
             <i class="bi bi-star-fill"></i>
           </div>
           <p class="testimonial-content">
- My dipatcher is doing very well and keep me busy with good paying loads. I am very happy with the service.
+            My dipatcher is doing very well and keep me busy with good paying loads. I am very happy with the service.
           </p>
           <div class="testimonial-author">
             <div class="author-img">T</div>
@@ -460,7 +462,7 @@
             </div>
           </div>
         </div>
-     
+
         <!-- Testimonial 2 -->
         <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
           <i class="bi bi-quote quote-icon"></i>
@@ -484,7 +486,7 @@
           </div>
         </div>
 
-  <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="300">
           <i class="bi bi-quote quote-icon"></i>
           <div class="testimonial-stars">
             <i class="bi bi-star-fill"></i>
@@ -506,67 +508,65 @@
           </div>
         </div>
 
-        </div>
+      </div>
 
 
     </div>
 
-</section>
-
-
-
   </section>
+
+
 
   <footer class="contact">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col" data-aos="fade-up">
-                <a href="#" class="nav-logo" style="display:inline-block; margin-bottom:20px;">Truckzap</a>
-                <p style="color:var(--muted); line-height: 1.6;">
-                     Providing top-tier dispatching services for trucking companies across the USA. Your success is our mission.
-                </p>
-            </div>
+      <div class="footer-grid">
+        <div class="footer-col" data-aos="fade-up">
+          <a href="#" class="nav-logo" style="display:inline-block; margin-bottom:20px;">Truckzap</a>
+          <p style="color:var(--muted); line-height: 1.6;">
+            Providing top-tier dispatching services for trucking companies across the USA. Your success is our mission.
+          </p>
+        </div>
 
         <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
         </div>
         <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
-            <h4>Our Services</h4>
-            <ul>
-                <li><a href="#">Dispatching</a></li>
-                <li><a href="#">Factoring</a></li>
-                <li><a href="#">ELD</a></li>
-            </ul>
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Dispatching</a></li>
+            <li><a href="#">Factoring</a></li>
+            <li><a href="#">ELD</a></li>
+          </ul>
         </div>
         <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
-            <h4>Contact Us</h4>
-            <ul style="color:var(--muted);">
-                <li style="margin-bottom: 12px;"><i class="bi bi-geo-alt" style="color:var(--p); margin-right:10px;"></i>
+          <h4>Contact Us</h4>
+          <ul style="color:var(--muted);">
+            <li style="margin-bottom: 12px;"><i class="bi bi-geo-alt" style="color:var(--p); margin-right:10px;"></i>
               Sheridan, WY</li>
             <li style="margin-bottom: 12px;"><i class="bi bi-telephone" style="color:var(--p); margin-right:10px;"></i>
               (307) 466-7222</li>
             <li style="margin-bottom: 12px;"><i class="bi bi-envelope" style="color:var(--p); margin-right:10px;"></i>
               support@truckzap.com</li>
-            </ul>
+          </ul>
         </div>
-       </div>
-       <div class="footer-bottom">
+      </div>
+      <div class="footer-bottom">
         &copy; 2026 Truck Zap Dispatching LLC. All rights reserved.
-       </div>
+      </div>
     </div>
   </footer>
-   <button id="scrollTop" class="scroll-top">
+  <button id="scrollTop" class="scroll-top">
     <i class="bi bi-arrow-up"></i>
   </button>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
-   
+
 </body>
 
 </html>

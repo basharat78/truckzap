@@ -751,30 +751,40 @@
       animation: fadeLeft .6s .2s ease both;
     }
 
-    /* double rotating rings */
+    /* double rotating rings — conic-gradient with radial fallback for older browsers */
     .video-ring {
       position: absolute;
       inset: -28px;
+      top: -28px; right: -28px; bottom: -28px; left: -28px; /* inset fallback */
       border-radius: 30px;
+      /* Fallback for browsers without conic-gradient (older Safari, Firefox < 83) */
+      background: radial-gradient(ellipse at center, rgba(108, 93, 211, .5) 0%, rgba(80, 160, 255, .3) 50%, transparent 80%);
+      /* Modern browsers with conic-gradient support */
       background: conic-gradient(from 0deg,
           transparent 0%, rgba(108, 93, 211, .6) 15%,
           rgba(80, 160, 255, .4) 50%, rgba(108, 93, 211, .6) 85%,
           transparent 100%);
       filter: blur(22px);
       animation: spin 6s linear infinite;
+      will-change: transform;
       pointer-events: none;
     }
 
     .video-ring2 {
       position: absolute;
       inset: -14px;
+      top: -14px; right: -14px; bottom: -14px; left: -14px; /* inset fallback */
       border-radius: 26px;
+      /* Fallback */
+      background: radial-gradient(ellipse at center, rgba(180, 100, 255, .25) 0%, rgba(100, 200, 255, .15) 50%, transparent 80%);
+      /* Modern */
       background: conic-gradient(from 180deg,
           transparent 0%, rgba(180, 100, 255, .3) 20%,
           rgba(100, 200, 255, .2) 50%, rgba(180, 100, 255, .3) 80%,
           transparent 100%);
       filter: blur(12px);
       animation: spin 10s linear infinite reverse;
+      will-change: transform;
       pointer-events: none;
     }
 
@@ -801,6 +811,7 @@
       width: 100%;
       height: 100%;
       position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0; /* inset fallback */
       inset: 0;
     }
 
@@ -808,8 +819,6 @@
       fill: none;
       stroke: url(#borderGrad);
       stroke-width: 1.5;
-      rx: 22;
-      ry: 22;
       stroke-dasharray: 30 10;
       animation: dashMove 2.5s linear infinite;
     }
@@ -824,9 +833,20 @@
       position: relative;
       border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 16/10;
+      /* aspect-ratio fallback for Safari < 15 and older browsers */
+      padding-top: 62.5%; /* 16/10 = 1.6, so 100/1.6 = 62.5% */
+      height: 0;
       border: 1px solid rgba(108, 93, 211, .35);
       box-shadow: 0 0 60px rgba(108, 93, 211, .25), 0 24px 80px rgba(0, 0, 0, .6);
+    }
+
+    /* Browsers that support aspect-ratio get the cleaner version */
+    @supports (aspect-ratio: 16/10) {
+      .video-wrap {
+        aspect-ratio: 16/10;
+        padding-top: 0;
+        height: auto;
+      }
     }
 
     .video-wrap video {
@@ -834,6 +854,9 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .video-overlay {
@@ -1908,16 +1931,22 @@
     flex: 1;
     position: relative;
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
   }
 
   .marquee-content {
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
     gap: 60px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
+    -webkit-animation: marqueeRun 40s linear infinite;
     animation: marqueeRun 40s linear infinite;
+    will-change: transform;
   }
 
   .marquee:hover .marquee-content {
