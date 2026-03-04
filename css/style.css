@@ -2050,3 +2050,39 @@
     margin-bottom: 25px;
     transition: all 0.5s ease;
   }
+  
+  .truck-card:hover .truck-icon {
+    background: linear-gradient(135deg, var(--p), #4a90e2);
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 25px var(--pg);
+  }
+
+  .truck-card h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  .truck-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  /* truck badge for special types */
+  .truck-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--p);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px var(--pg);
+  }
