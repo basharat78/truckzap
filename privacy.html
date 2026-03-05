@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Truckzap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Privacy Page Specific Styles */
+        .privacy-hero {
+            padding: 180px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .privacy-container {
+            padding: 0 0 100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Tabs Styling */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            color: var(--muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--p);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background: var(--p);
+            border-color: var(--p);
+            color: #fff;
+            box-shadow: 0 10px 25px rgba(108, 93, 211, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Content Area */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 93, 211, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .policy-content {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .policy-content h2 {
+            color: #fff;
+            margin: 40px 0 20px;
+            font-size: 1.8rem;
+        }
+
+        .policy-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .policy-content p {
+            margin-bottom: 20px;
+        }
+
+        .policy-content ul {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .policy-content li {
+            margin-bottom: 12px;
+            list-style: disc;
+        }
+
+        .policy-content .highlight {
+            color: var(--p);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 40px 25px;
+            }
+
+            .tab-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+      <!-- Particle canvas -->
+     <canvas id="canvas"></canvas>
+  <!-- ══ NAVBAR ══ -->
+    <nav>
+        <div class="nav-bg"></div>
+        <a href="index.html" class="nav-logo">Truckzap</a>
+        <div class="nav-hamburger" id="navHamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#truck-types">Trucks</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li class="has-dropdown">
+                <a href="index.html#services">Services<i class="bi bi-chevron-down dropdown-icon"></i></a>
+                <ul class="sub-menu">
+                    <li><a href="eld.html">ELD</a></li>
+                    <li><a href="factoring.html">Factoring</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+13074667222" class="nav-btn mobile-btn"><span>(307) 466-7222</span></a></li>
+        </ul>
+        <a href="tel:+13074667222" class="nav-btn desktop-btn"><span>(307) 466-7222</span></a>
+    </nav>
+       <!-- ══ HERO ══ -->
+    <section class="privacy-hero">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="container" data-aos="fade-up">
+            <span class="section-tag">Legal Information</span>
+            <h1 class="section-title">Privacy & <span style="color:var(--p)">Policy</span></h1>
+            <p class="hero-desc" style="max-width: 700px; margin: 0 auto;">
+                We value your trust and are committed to protecting your personal information. Review our terms and
+                privacy practices below.
+            </p>
+        </div>
+    </section>
+    <!-- ══ CONTENT ══ -->
+    <section class="privacy-container">
+        <div class="container">
+
+            <!-- Tab Controls -->
+            <div class="tab-nav" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-btn active" onclick="switchTab('terms')">Privacy Policy</button>
+                <button class="tab-btn" onclick="switchTab('privacy')">Messaging Privacy & Conditions</button>
+            </div>
+
+            <!-- Tabbed Cards -->
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Messaging Terms Content -->
+                <div id="terms" class="tab-content active">
+                    <div class="policy-content">
+                        <h2>Privacy Policy</h2>
+                        <p>This Privacy Policy explains how personal information about you is collected, 
+                            used and disclosed by Truck Zap Dispatching LLC zap Solutions 
+                            (hereinafter referred to as “Truck Zap Dispatching LLC zap”). 
+                            This Privacy Policy applies to information we collect when you access or use our website,
+                             mobile application and services (collectively, the “Services”), or when you otherwise interact with us.
+                              The terms under this Privacy Policy shall govern the disclosure, compilation, use and protection of your 
+                              personal Information submitted on our website and/or Application. We are fully committed to respecting the
+                               privacy of all personal information received through this portal and/or the Application i.e.
+                                the Services that you may use. We may change the provisions of this Privacy Policy at any time 
+                                and will indicate when changes are made by revising the date of this policy. We encourage you to review 
+                                the Privacy Policy whenever you access the Services to stay informed about our information practices.
+                                 By visiting and/ or using the website/App, the user/customer agrees to the following terms and conditions
+                                  under this Privacy Policy. </p>
+<!-- 
+                        <p>Truckzap may send mobile messages for the purposes of <span class="highlight">dispatch
+                                updates, scheduling, recruitment alerts, and general service notifications</span>. These
+                            messages may be transactional or promotional in nature.</p> -->
+                  <h2 style="font-size: 1.4rem;">1. SCOPE AND APPLICATION</h2>
+                            <p>1.1. This Privacy Policy applies to persons, who use our Site/Application or Service’s. On acceptance of the terms of the agreement, being the terms of use, the user or the service provider hereby consents to provide his personal information to Truck Zap Dispatching LLC zap.
+                                 However using our Site/Application or Service is a deemed acceptance to the terms of agreement. </p>
+                        <h2 style="font-size: 1.4rem;">2. SECURITY </h2>
+                        <p>2.1. We will take commercially reasonable measures to help protect your personal information in an effort to prevent loss, misuse and unauthorized access, disclosure, alteration and destruction. All the information we have about members’ is controlled by the relevant laws as applicable. We will keep the information as we need to maintain contact with you, and for our records. We will store and process personal information at a safe haven that could by anywhere across the world. That said this information is kept securely and access to it is strictly controlled. Truck Zap Dispatching LLC zap uses certain physical, managerial, and technical safeguards that are designed to improve the integrity and security of your personally identifiable information. Truck Zap Dispatching LLC zap cannot, however, ensure or warrant the security of any information you transmit to us or store on the Service, and you do so at your own risk. Truck Zap Dispatching LLC zap also cannot guarantee that such information may not be accessed, disclosed, altered, or destroyed by breach of any of our physical, technical, or managerial safeguards. If Truck Zap Dispatching LLC zap learns of a security systems breach, then Truck Zap Dispatching LLC zap may attempt to notify you electronically so that you can take appropriate protective steps. Truck Zap Dispatching LLC zap may post a notice through the Service if a security breach occurs. Depending on where you live, you may have a legal right to receive notice of a security breach in writing. To receive a written notice of a security breach you should notify us at support@Truck Zap Dispatching LLC zap.in<br>
+
+2.2. This information shared with us is treated as confidential in nature. Truck Zap Dispatching LLC zap does not sell or trade upon any of the above foregoing information without the consent of the user. We do not share any of your personal information with third parties without your explicit consent and we only use your information as described in the Privacy Policy. If you object to your information being transferred or used in this way please do not use the Site/App.<br>
+
+2.3. We take appropriate steps to protect the information you share with us. We have implemented technology and security features and strict policy guidelines to safeguard the privacy of your personal information from unauthorized access and improper use or disclosure and we ensure that our security procedures are compliant with current applicable regulations.<br>
+
+2.4. Under no circumstances do we rent, trade or share your personal information that we have collected with any other company for their marketing purposes without your consent. We reserve the right to communicate your personal information to any third party that makes a legally-compliant request for its disclosure.<br>
+
+2.5. The information we provide to such third parties, alliance partners, or vendors are protected by a confidentiality agreement and are to be used solely for completing the specific project, and the usage of that information will be in compliance with the applicable regulations. </p>
+
+                        <h2 style="font-size: 1.4rem;">3. USER’s OBLIGATIONS</h2>
+                        <p>3.1. You must only submit to us or our agent, affiliates or the Site/App information which is accurate and not misleading and you must keep it up to date and inform us of changes.<br>
+
+3.2. Your actual details may be stored with us and you may access this information by logging into your account on the Site/App. You undertake to treat the personal access data confidentially and not make it available to unauthorized third parties. We cannot assume any liability for misuse of passwords unless this misuse is our fault. </p>
+
+                        <h2 style="font-size: 1.4rem;">4. TYPES OF INFORMATION WE COLLECT</h2>
+                        <p>4.1. When you access or use our Services, we may also automatically collect quantitative and qualitative data information about you, including: <br>
+
+Information we collect automatically: When you Our Services, we collect information sent to us by your computer, mobile phone or other access device. The information sent to us includes, but is not limited to, the following: data about the pages you access, computer IP address, device ID or unique identifier, device type, geo-location information, computer and connection information, mobile network information, statistics on page views, traffic to and from the sites, referral URL, ad data, and standard web log data and other information. We also collect anonymous information through our use of cookies and web beacons. <br>
+
+Information you provide to us: We may collect and store any information you provide us when you use our Services. We also collect information about your transactions and your activities. In case you register with us, we collect the following types of information</p>
+                        <ul>
+                            <li>Contact information, such as your name, address, phone, email and other similar information.</li>
+                            <li>Detailed personal information such as your date of birth or national ID number.
+                            </li>
+                            <li>Financial information, such as the full bank account numbers and/or credit card numbers that you link to your account only incase a customer requests us to do so.</li>
+                        </ul>
+                        <p>Information from other sources: We may also collect information from or about you from other sources, such as through your contact with us, including our customer support team. We may also obtain information about you from third parties such as credit bureaus and identity verification services. You may choose to provide us with access to certain personal information stored by third parties such as social media sites (e.g., Facebook and Twitter). The information we may receive varies by site and is controlled by that site. By associating an account managed by a third party with your account on Truck Zap Dispatching LLC zap, you authorize Truck Zap Dispatching LLC zap to have access to the said account and access the information. You agree that Truck Zap Dispatching LLC zap may collect, store and use this information in accordance with this Privacy Policy. <br>
+
+Authentication and Fraud Detection: In order to help protect you from fraud and misuse of your personal information, we may collect information about you. We may also evaluate your computer, mobile phone or other access device to identify any malicious software or activity. <br>
+Using Your Mobile Device: We may offer you the ability to connect with us using a mobile device, either through a mobile application or via a mobile optimized website. The provisions of this Privacy Policy apply to all such mobile access and use of mobile devices. When you download or use our mobile applications, or access one of our mobile optimized sites, we may receive information about your location and your mobile device, including a unique identifier for your device. We may use this information to provide you with location-based services, such as advertising, search results, and other personalized content. Most mobile devices allow you to control or disable location services in the device’s setting’s menu. If you have questions about how to disable your device’s location services, we recommend you contact your mobile service carrier or the manufacture of your particular device. <br>
+Log Information. We collect log information as to how and why you use our Services, when you install, download, including your access times, communicate with us via third party social media sites, request customer support, or otherwise communicate with us, browser type and language, and Internet Protocol address. <br>
+Personal information. This relates to individual data captured by Web forms, for instance when registering as a member, or as a member accessing the members’ area and requests for information. This information is that which can be used to uniquely identify or contact a single person (such as an individual’s name, address, telephone number or e-mail address), information about that individual or such individuals’ activities or preferences when such information is directly linked to personal information and any other contact or identifying information you choose to provide. Personal information does not include aggregate information, which is data we collect about the characteristics and activities of users of the Services, from which any personal information has been removed. This Privacy Policy in no way limits or restricts our collection of aggregate information or of non-personal information. <br>
+Location Information: When you use the Services for specific events, we collect precise location data about the event from the location you have searched. If you permit the Truck Zap Dispatching LLC zap App to access location services through the permission system used by your mobile operating system (“platform”), we may also collect the precise location of your device when the App is running in the foreground or background. We may also derive your approximate location from your IP address.<br>
+Transaction Information: We collect transaction details related to your use of our Services, including the type of Service requested, date and time the Service was provided, amount charged, distance travelled, and other related transaction details. <br>
+Device Information: We may collect information about your mobile device, including, for example, the hardware model, operating system and version, software and file names and versions, preferred language, unique device identifier, advertising identifiers, serial number, device motion information, and mobile network information. <br>
+Call and SMS Data : Our Services facilitate communications between Users and Drivers. In connection with facilitating this service, we receive call data, including the date and time of the call or SMS message, the parties’ phone numbers, and the content of the SMS message. </p>
+
+                        <h2 style="font-size: 1.4rem;">5. USE OF INFORMATION</h2>
+                        <p>We may use the information we collect about you to:</p>
+                        <ul>
+                            <li>Provide, maintain, and improve our Services, including, for example, to facilitate payments, send receipts, provide services you request (and send related information), develop new features, provide customer support to Users and Drivers, develop safety features, authenticate users, and send product updates and administrative messages</li>
+                            <li>Verify your identity, including during account creation and password reset processes</li>
+                            <li>Resolve disputes, collect fees, and troubleshoot problems</li>
+                            <li>Manage risk, or to detect, prevent, and/or remediate fraud or other potentially prohibited or illegal activities</li>
+                            <li>Detect, prevent or remediate violations of policies or applicable user agreements</li>
+                            <li>Perform internal operations, including, for example, to prevent fraud and abuse of our Services; to troubleshoot software bugs and operational problems to conduct data analysis, testing, and research; and to monitor and analyze usage and activity trends</li>
+                            <li>Send or facilitate communications between service provider and the service recipient</li>
+                            <li>Send you communications we think will be of interest to you, including information about products, services, promotions, news, and events of service providers and other companies, where permissible and according to local applicable laws; and to process contest, sweepstake, or other promotion entries and fulfill any related awards</li>
+                            <li>Personalize and improve the Services, including to provide or recommend features, content, social connections, referrals, and advertisements</li>
+                            <li>Transfer the information described in this Policy to, and process and store it in, some of which may have less protective data protection laws than the region in which you reside. Where this is the case, we will take appropriate measures to protect your personal information in accordance with this Policy</li>
+                            <li>Process transactions and send notices about your transactions</li>
+                            <li>Provide targeted marketing and advertising, provide service update notices, and deliver promotional offers based on your communication preferences</li>
+                            <li>Contact you at any telephone number, by placing a voice call or through text (SMS) or email messaging</li>
+                            <li>Contact you via electronic means or postal mail to notify you regarding your account, to troubleshoot problems with your account, to resolve a dispute, to collect fees or monies owed, to poll your opinions through surveys or questionnaires, or as otherwise necessary to service your account. Additionally, we may contact you to offer coupons, discounts and promotions, and inform you about PayPal Services and the services of our corporate family. Finally, we may contact you as necessary to enforce our policies, applicable law, or any agreement we may have with you. When contacting you via phone, to reach you as efficiently as possible we may use, and you consent to receive, auto-dialed or pre-recorded calls and text messages. Where applicable and permitted by law, you may decline to receive certain communications</li>
+                        </ul>
+
+                          <h2 style="font-size: 1.4rem;">5. SHARING OF INFORMATION</h2>
+                        <p>6.1. We may share the information we collect about you as described in this Policy or as described at the time of collection or sharing, including as follows:</p>
+                        <ul>
+                            <li>With service providers, event organizers to enable them to provide the Services you request. For example, we share your name, photo (if you provide one) and telephone and contact details</li>
+                            <li>With third parties to provide you a service you requested through a partnership or promotional offering made by a third party or us</li>
+                            <li>With the general public if you submit content in a public forum, such as blog comments, social media posts, or other features of our Services that are viewable by the general public</li>
+                            <li>With third parties with whom you choose to let us share information, for example other apps or websites that integrate with our API or Services, or those with an API or Service with which we integrate</li>
+                            <li>With Truck Zap Dispatching LLC zap affiliated entities that provide services or conduct data processing on our behalf, or for data centralization and / or logistics purposes</li>
+                            <li>With vendors, consultants, marketing partners, and other service providers who need access to such information to carry out work on our behalf</li>
+                            <li>In response to a request for information by a competent authority if we believe disclosure is in accordance with, or is otherwise required by, any applicable law, regulation, or legal process</li>
+                            <li>With law enforcement officials, government authorities, or other third parties if we believe your actions are inconsistent with our User Terms, Terms of Service, or policies, or to protect the rights, property, or safety of Truck Zap Dispatching LLC zap or others</li>
+                            <li>In connection with, or during negotiations of, any merger, sale of company assets, consolidation or restructuring, financing, or acquisition of all or a portion of our business by or into another company</li>
+                            <li>If we otherwise notify you and you consent to the sharing</li>
+                            <li>In an aggregated and/or anonymized form which cannot reasonably be used to identify you</li>
+                        </ul>
+
+                        <h2 style="font-size: 1.4rem;">6.2. How we Share your Personal Information</h2>
+
+When transacting with others, we may provide those parties with information about you necessary to complete the transaction, such as your name, account ID, contact details, shipping and billing address, or other information needed to promote the reliability and security of the transaction. If a transaction is held, fails, or is later invalidated, we may also provide details of the unsuccessful transaction. To facilitate dispute resolution, we may provide a buyer with the seller’s address so that goods can be returned to the seller. The receiving party is not allowed to use this information for unrelated purposes, such as to directly market to you, unless you have agreed to it. Contacting users with unwanted or threatening messages is against our policies and constitutes a violation of our Agreement. 
+
+We work with third parties, including merchants, to enable them to accept or send payments from or to you. In doing so, a third party may share information about you with us, such as your email address or mobile phone number, to inform you that a payment has been sent to you or when you attempt to pay a merchant or third party. We use this information to confirm that you are a Truck Zap Dispatching LLC zap customer, or to send you notification of payment status. 
+
+Please note that merchants, sellers, and users you buy from or contract with have their own privacy policies, Truck Zap Dispatching LLC zap is not responsible for their actions, including their information protection practices. 
+
+Regardless, we will not disclose your credit card number or bank account number to anyone you have paid or who has paid you, or with the third parties, except with your express permission or if we are required to do so to comply with credit card rules, or other legal process.<br>
+
+6.3. How We Protect and Store Personal Information
+
+Throughout this Privacy Policy, we use the term “personal information” to describe information that can be associated with a specific person and can be used to identify that person. We do not consider personal information to include information that has been made anonymous so that it does not identify a specific user. 
+
+We store and process your personal information on our cloud based servers in compliance with security features elsewhere in the world where our facilities are located. We protect your information using physical, technical, and administrative security measures to reduce the risks of loss, misuse, unauthorized access, disclosure and alteration. </p>
+
+                              <h2 style="font-size: 1.4rem;">5. ACCOUNT INFORMATION</h2>
+                        <p>7.1. You may correct, modify your account information at any time by logging into your online or in-app account. If you wish to cancel your account, please email us at support@Truck Zap Dispatching LLC zap.in. Please note that in some cases we may retain certain information about you as required by law, or for legitimate business purposes to the extent permitted by law. For instance, if you have a standing credit or debt on your account, or if we believe you have committed fraud or violated our Terms, we may seek to resolve the issue before deleting your information. We will comply with individual’s requests regarding access, correction, and/or deletion of the personal data it stores in accordance with applicable law. </p>
+
+                        <h2 style="font-size: 1.4rem;">5. COOKIES</h2>
+                        <p>8.1. We use cookies solely for the purpose of identifying those who contact us and to provide secure personalized access. We use various technologies to collect information, and this may include sending cookies to your computer or tab or mobile or any other relevant device. Cookies are small data files stored on your device. Among other things, cookies help us improve our Services and your experience, see which areas and features of our Services are popular and count visits. Most browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject browser cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. </p>
+
+                              <h2 style="font-size: 1.4rem;">9. WEB BEACONS</h2>
+                        <p>Carriers are not liable for delayed or undelivered messages. We support all major US carriers
+                            including AT&T, T-Mobile, Verizon, and others.</p>
+
+                                    <h2 style="font-size: 1.4rem;">10. THIRD PARTY ANALYTICS</h2>
+                        <p>10.1. We may allow third parties to use cookies, web beacons and other devices or technologies to provide analytics services and serve advertisements to you in connection with the Services. The information collected by these third parties typically includes your IP address, the browser you use to visit our Services, pages viewed, time spent on pages, links clicked, and conversion information. This information may be used by us and third parties to, among other things, analyze and Truck Zap Dispatching LLC  data, determine the popularity of certain content, deliver advertising and content targeted to your interests and better understand the usage and visitation of our Services and other sites Truck Zap Dispatching LLC ed by these third parties. This Privacy Policy does not apply to, and we are not responsible for, third party cookies, web beacons or other Truck Zap Dispatching LLC ing technologies and we encourage you to check the privacy policies of these third parties to learn more about their privacy practices. <br>
+
+10.2. We use Google Analytics to gather, store and collate information on our visitors and users. It tells us how many unique visitors or users have accessed our services, the pages visited and the quality of access in what order and for how long etc. The service only reports on aggregate visitor data in anonymous form and does not collect personal information like addresses, names, or credit card numbers. For example, if users fill in personal details on a web site using Google Analytics, that data is not collected by or reported on by Google Analytics. </p>
+                            
+                                    <h2 style="font-size: 1.4rem;">11. SOCIAL SHARING FEATURES</h2>
+                        <p>11.1. The Services may offer social sharing features (such as the “Like” button) or other tools which let you share actions you take on our Services with other websites, apps and vice versa. The use of such features enables the sharing of certain information with your friends or the public, depending on the settings you establish with the third party that provides the social sharing feature. For more information about the purpose and scope of data collection and processing in connection with social sharing features, please visit the privacy policies for the third parties that provide these social sharing features.</p>
+                            
+                                    <h2 style="font-size: 1.4rem;">12. PRIVACY SETTINGS</h2>
+                        <p>12.1. Although Truck Zap Dispatching LLC zap may allow you to adjust your privacy settings to limit access to certain personal information, please be aware that no security measures are perfect or impenetrable. Truck Zap Dispatching LLC zap is not responsible for circumvention of any privacy settings or security measures on the Service. Additionally, Truck Zap Dispatching LLC zap cannot control the actions of other users with whom you may choose to share your information. Further, even after information posted on the Service is removed, caching and archiving services may have saved that information, and other users or third parties may have copied or stored the information available on the Service. Truck Zap Dispatching LLC zap cannot and does not guarantee that information you post on or transmit to the Service will not be viewed by unauthorized persons. </p>
+                            
+                                    <h2 style="font-size: 1.4rem;">13. SERVICE-RELATED ANNOUNCEMENTS</h2>
+                        <p>13.1. We will send you strictly service-related announcements on rare occasions when it is necessary to do so. For instance, if our service is temporarily suspended for maintenance, we might send you an email. Generally, you may not opt-out of these communications, which are not promotional in nature. If you do not wish to receive them, you have the option to deactivate your account.<br>
+
+13.2. We may contact you via electronic means or postal mail to notify you regarding your account, to troubleshoot problems with your account, to resolve a dispute, to collect fees or monies owed, to poll your opinions through surveys or questionnaires, or as otherwise necessary to service your account. Additionally, we may contact you to offer coupons, discounts and promotions, and inform you about Services and the services of our corporate family. Finally, we may contact you as necessary to enforce our policies, applicable law, or any agreement we may have with you. When contacting you via phone, to reach you as efficiently as possible we may use, and you consent to receive, autodialed or prerecorded calls and text messages. Where applicable and permitted by law, you may decline to receive certain communications. </p>
+                            
+                                    <h2 style="font-size: 1.4rem;">14. LEGAL DISCLAIMER</h2>
+                        <p>14.1. We reserve the right to disclose your personally identifiable information as required by law and when we believe that disclosure is necessary to protect our rights and/or to comply with a judicial proceeding, court order, or legal process served on our website or App or in the good faith belief that disclosure is otherwise necessary or advisable including, without limitation, to protect the rights or properties of Truck Zap Dispatching LLC zap or any of its representatives and affiliates or when we have reason to believe that disclosing the information is necessary to identify, contact or bring legal action against someone who may be causing interference with our rights or properties, whether intentionally or otherwise, or when anyone else could be harmed by such activities. <br>
+
+14.2. You should note that Truck Zap Dispatching LLC zap website does not warrant that the information published on this website will be error free and in using this website you acknowledge that the details and all other information including information relating to services published on this website may include inaccuracies, mistranslations or typographical errors. All bookings for services on this website are made with the service provider concerned and not with Truck Zap Dispatching LLC zap. Truck Zap Dispatching LLC zap is not a party to the contract between you and the service provider and has no responsibility or liability to you in respect of the terms of that contract whether directly or indirectly.<br>
+
+14.3. Prior to making a booking, you should ensure that you have reviewed the services provider’s terms and conditions and that they are acceptable to you.<br>
+
+14.4. Neither Truck Zap Dispatching LLC nor any of its directors, employees, affiliates or other representatives will be liable for loss or damages arising out of or in connection with your use of any information, products, services and/or the materials offered through this website, including but not limited to, loss of data, income, profit or opportunity, loss of or damage to property and claims of third parties, or any indirect or consequential loss or damages, even if Truck Zap Dispatching LLC has been advised of the possibility of such loss or damage, or such loss or damages were reasonably foreseeable. </p>
+                            
+                                    <h2 style="font-size: 1.4rem;">15. CHANGES AND UPDATES TO THIS POLICY.</h2>
+                        <p>15.1. Please revisit this page periodically to stay aware of any changes to this Policy, which Truck Zap Dispatching LLC may update from time to time. If we modify the Policy, we will make it available through the Service, and indicate the date of the latest revision. In the event that the modifications materially alter your rights or obligations hereunder, we will make reasonable efforts to notify you of the change. For example, we may send a message to your email address, if Truck Zap Dispatching LLC has one on file, or generate a pop-up or similar notification when you access the Service for the first time after such material changes are made. Your continued use of the Service after the revised Policy has become effective indicates that you have read, understood and agreed to the modified version of the Policy. </p>
+
+                                    <h2 style="font-size: 1.4rem;">CONTACT US</h2>
+                        <p>If you have any questions about this Privacy Policy, please contact us at: support@truckzap.com</p>
+
+                            
+
+                    </div>
+                </div>
+
+                <!-- Messaging Privacy Content -->
+                <div id="privacy" class="tab-content">
+                    <div class="policy-content">
+                        <h2>Messaging Privacy Policy</h2>
+                        <p>No mobile information will be shared with any third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with or obtained by any third parties.</p>
+
+                        
+                        <p>If you wish to be removed from receiving future communications, you can opt out at any time by texting STOP or contacting us at support@truckzap.com.</p>
+
+                        <h2>Messaging Terms & Conditions</h2>
+                        <p>You agree to receive informational messages (appointment reminders, account notifications, etc.) from Truck Zap Dispatching LLC. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at support@truckzap.com. You can opt out at any time by replying STOP.”</p>
+                
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+   <!-- ══ FOOTER ══ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" data-aos="fade-up">
+                    <a href="index.html" class="nav-logo" style="display:inline-flex; margin-bottom: 20px;">
+                        <span class="logo-text">Truck<span>zap</span></span>
+                    </a>
+                    <p style="color:var(--muted); line-height: 1.6;">
+                        Providing top-tier dispatching services for trucking companies across the USA. Your success is
+                        our mission.
+                    </p>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                    <h4>Our Services</h4>
+                    <ul>
+                          <li><a href="index.html#packages">Dispatching</a></li>
+                        <li><a href="eld.html">ELD Solutions</a></li>
+                        <li><a href="factoring.html">Factoring</a></li>
+                
+                    </ul>
+                </div>
+                <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                    <h4>Contact Us</h4>
+                    <ul style="color:var(--muted);">
+                        <li style="margin-bottom: 12px;"><i class="bi bi-geo-alt"
+                                style="color:var(--p); margin-right:10px;"></i> Sheridan, WY</li>
+                        <li style="margin-bottom: 12px;"><i class="bi bi-telephone"
+                                style="color:var(--p); margin-right:10px;"></i> (307) 466-7222</li>
+                        <li style="margin-bottom: 12px;"><i class="bi bi-envelope"
+                                style="color:var(--p); margin-right:10px;"></i> support@truckzap.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Truck Zap Dispatching LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+        <button id="scrollTop" class="scroll-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function switchTab(tabId) {
+            // Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+
+            // Content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+
+            // AOS Refresh to handle animation on new tab
+            AOS.refresh();
+        }
+    </script>
+</body>
+</html>

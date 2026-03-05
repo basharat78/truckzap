@@ -243,6 +243,16 @@ document.addEventListener('DOMContentLoaded', function () {
       muteIcon.className = vid.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
     });
 
+    // Proactive play attempt for Firefox/Chrome
+    var playAttempt = function () {
+      vid.play().catch(function (err) {
+        console.log("Autoplay prevented, waiting for interaction:", err);
+      });
+    };
+
+    // Try immediately after short delay
+    setTimeout(playAttempt, 500);
+
     // Autoplay policy: some browsers block autoplay; try to play on first user interaction
     document.addEventListener('click', function tryPlay() {
       vid.play().catch(function () { });
