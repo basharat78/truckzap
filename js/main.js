@@ -554,3 +554,79 @@ function initReviewCarousel() {
 document.addEventListener('DOMContentLoaded', () => {
   initReviewCarousel();
 });
+
+
+/* ═══════════════════════════════════
+   9. LEAD FORM SUBMISSION (Simulation)
+═══════════════════════════════════ */
+const leadForm = document.getElementById('leadForm');
+if (leadForm) {
+  leadForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const originalContent = btn.innerHTML;
+
+    btn.innerHTML = '<span>Processing...</span><i class="bi bi-arrow-repeat spin"></i>';
+    btn.style.opacity = '0.7';
+    btn.style.pointerEvents = 'none';
+
+    // Simulate API delay
+    setTimeout(() => {
+      btn.innerHTML = '<span>MC Details Sent!</span><i class="bi bi-check-all"></i>';
+      btn.style.background = '#27ae60';
+      this.reset();
+
+      setTimeout(() => {
+        btn.innerHTML = originalContent;
+        btn.style.background = '';
+        btn.style.opacity = '';
+        btn.style.pointerEvents = '';
+      }, 3000);
+    }, 2000);
+  });
+}
+
+// Update IntersectionObserver to handle both hero stats and trust signals
+const statContainers = document.querySelectorAll('.hero-stats, .trust-grid');
+if (statContainers.length > 0) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.stat-num').forEach(el => {
+          if (el.dataset.target) {
+            animCount(el, +el.dataset.target);
+          }
+        });
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  statContainers.forEach(container => io.observe(container));
+}
+
+// CSS for spin animation (if not already present)
+if (!document.getElementById('form-spin-style')) {
+  const style = document.createElement('style');
+  style.id = 'form-spin-style';
+  style.textContent = `
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .spin { animation: spin 1s linear infinite; display: inline-block; }
+  `;
+  document.head.appendChild(style);
+}
+
+// Manual AOS trigger on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof AOS !== 'undefined') {
+    AOS.refresh();
+  }
+  // Ensure all AOS elements are visible if AOS fails or takes too long
+  setTimeout(() => {
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.visibility = 'visible';
+    });
+  }, 2000);
+});
