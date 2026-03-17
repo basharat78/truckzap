@@ -234,60 +234,85 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ══ 5. MUTE TOGGLE ══ */
-  var vid = document.getElementById('heroVideo');
-  var muteBtn = document.getElementById('muteBtn');
-  var muteIcon = document.getElementById('muteIcon');
-  if (vid && muteBtn && muteIcon) {
-    muteBtn.addEventListener('click', function () {
-      vid.muted = !vid.muted;
-      muteIcon.className = vid.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
-    });
+  // var vid = document.getElementById('heroVideo');
+  // var muteBtn = document.getElementById('muteBtn');
+  // var muteIcon = document.getElementById('muteIcon');
+  // if (vid && muteBtn && muteIcon) {
+  //   muteBtn.addEventListener('click', function () {
+  //     vid.muted = !vid.muted;
+  //     muteIcon.className = vid.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
+  //   });
 
-    // Proactive play attempt for Firefox/Chrome
-    var playAttempt = function () {
-      vid.play().catch(function (err) {
-        console.log("Autoplay prevented, waiting for interaction:", err);
-      });
-    };
+  //   // Proactive play attempt for Firefox/Chrome
+  //   var playAttempt = function () {
+  //     vid.play().catch(function (err) {
+  //       console.log("Autoplay prevented, waiting for interaction:", err);
+  //     });
+  //   };
 
-    // Try immediately after short delay
-    setTimeout(playAttempt, 500);
+  //   // Try immediately after short delay
+  //   setTimeout(playAttempt, 500);
 
-    // Autoplay policy: some browsers block autoplay; try to play on first user interaction
-    document.addEventListener('click', function tryPlay() {
-      vid.play().catch(function () { });
-      document.removeEventListener('click', tryPlay);
-    }, { once: true });
-  }
+  //   // Autoplay policy: some browsers block autoplay; try to play on first user interaction
+  //   document.addEventListener('click', function tryPlay() {
+  //     vid.play().catch(function () { });
+  //     document.removeEventListener('click', tryPlay);
+  //   }, { once: true });
+  // }
+  
+/* ═══════════════════════════════════
+   5. MUTE TOGGLE
+═══════════════════════════════════ */
+const vid = document.getElementById('heroVideo');
+const muteBtn = document.getElementById('muteBtn');
+const muteIcon = document.getElementById('muteIcon');
+if (muteBtn && vid && muteIcon) {
+  muteBtn.addEventListener('click', () => {
+    vid.muted = !vid.muted;
+    muteIcon.className = vid.muted ? 'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
+  });
+}
 
   /* ══ 6. ANIMATED COUNTERS ══ */
-  function animCount(el, target) {
-    var dur = 2000, start = performance.now();
-    (function tick(now) {
-      var p = Math.min((now - start) / dur, 1);
-      el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
-      if (p < 1) requestAnimationFrame(tick);
-      else el.textContent = target;
-    })(start);
-  }
+  // function animCount(el, target) {
+  //   var dur = 2000, start = performance.now();
+  //   (function tick(now) {
+  //     var p = Math.min((now - start) / dur, 1);
+  //     el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+  //     if (p < 1) requestAnimationFrame(tick);
+  //     else el.textContent = target;
+  //   })(start);
+  // }
 
-  var heroStats = document.querySelector('.hero-stats');
-  if (heroStats && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        document.querySelectorAll('.stat-num').forEach(function (el) {
-          animCount(el, +el.dataset.target);
-        });
-        io.disconnect();
-      }
-    }, { threshold: 0.4 });
-    io.observe(heroStats);
-  } else if (heroStats) {
-    // Fallback for browsers without IntersectionObserver (IE11)
-    document.querySelectorAll('.stat-num').forEach(function (el) {
-      el.textContent = el.dataset.target;
-    });
-  }
+  // var heroStats = document.querySelector('.hero-stats');
+  // if (heroStats && 'IntersectionObserver' in window) {
+  //   var io = new IntersectionObserver(function (entries) {
+  //     if (entries[0].isIntersecting) {
+  //       document.querySelectorAll('.stat-num').forEach(function (el) {
+  //         animCount(el, +el.dataset.target);
+  //       });
+  //       io.disconnect();
+  //     }
+  //   }, { threshold: 0.4 });
+  //   io.observe(heroStats);
+  // } else if (heroStats) {
+  //   // Fallback for browsers without IntersectionObserver (IE11)
+  //   document.querySelectorAll('.stat-num').forEach(function (el) {
+  //     el.textContent = el.dataset.target;
+  //   });
+  // }
+/* ═══════════════════════════════════
+   6. ANIMATED COUNTERS
+═══════════════════════════════════ */
+function animCount(el, target) {
+  const dur = 2000, start = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  })(start);
+}
 
   /* ══ 7. BUTTON RIPPLE EFFECT ══ */
   var btnFilled = document.getElementById('btnFilled');
