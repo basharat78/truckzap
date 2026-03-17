@@ -439,3 +439,118 @@ function animCount(el, target) {
   }
 
 }); // end DOMContentLoaded
+
+
+/* ═══════════════════════════════════
+   10. REVIEW CAROUSEL LOGIC
+═══════════════════════════════════ */
+function initReviewCarousel() {
+  const carousel = document.getElementById('reviewsCarousel');
+  const prevBtn = document.getElementById('prevReview');
+  const nextBtn = document.getElementById('nextReview');
+  const dotsContainer = document.getElementById('carouselDots');
+  
+  if (!carousel || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  const slides = Array.from(carousel.children);
+  let currentIndex = 0;
+  let slidesPerView = getSlidesPerView();
+  let maxIndex = Math.max(0, slides.length - slidesPerView);
+
+  // Create dots
+  function createDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function getSlidesPerView() {
+    if (window.innerWidth <= 576) return 1;
+    if (window.innerWidth <= 991) return 2;
+    return 3;
+  }
+
+  function updateCarousel() {
+    const gap = 30; // matching CSS gap
+    const slideStyle = window.getComputedStyle(slides[0]);
+    const slideWidth = slides[0].offsetWidth + parseInt(slideStyle.marginRight || 0) + (gap / slidesPerView);
+    // simpler calculation based on slide width percentage
+    const percentage = 100 / slidesPerView;
+    carousel.style.transform = `translateX(-${currentIndex * (percentage)}%)`;
+    
+    // Adjust for gap
+    const offset = currentIndex * (gap);
+    carousel.style.transform = `translateX(calc(-${currentIndex * (percentage)}% - ${0}px))`; // simplified offset
+    
+    // Better calculation:
+    const trackWidth = carousel.parentElement.offsetWidth;
+    const scrollAmount = (slides[0].offsetWidth + gap) * currentIndex;
+    carousel.style.transform = `translateX(-${scrollAmount}px)`;
+
+    // Update dots
+    const dots = Array.from(dotsContainer.children);
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+
+    // Update slides focus effect
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i >= currentIndex && i < currentIndex + slidesPerView);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = Math.max(0, Math.min(index, maxIndex));
+    updateCarousel();
+    resetAutoPlay();
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+    goToSlide(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+    goToSlide(currentIndex);
+  });
+
+  // Handle resizing
+  window.addEventListener('resize', () => {
+    const NEW_slidesPerView = getSlidesPerView();
+    if (NEW_slidesPerView !== slidesPerView) {
+      slidesPerView = NEW_slidesPerView;
+      maxIndex = Math.max(0, slides.length - slidesPerView);
+      createDots();
+      goToSlide(Math.min(currentIndex, maxIndex));
+    } else {
+      updateCarousel();
+    }
+  });
+
+  // Auto Play
+  let autoPlayInterval = setInterval(() => {
+    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+    updateCarousel();
+  }, 5000);
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+      updateCarousel();
+    }, 5000);
+  }
+
+  // Initial call
+  createDots();
+  updateCarousel();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initReviewCarousel();
+});
