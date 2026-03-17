@@ -22,6 +22,20 @@ if (!window.performance || !window.performance.now) {
 }
 
 /* ═══════════════════════════════════
+   GLOBAL UTILITIES
+   Moving animCount to global scope to avoid ReferenceError with IntersectionObserver
+═══════════════════════════════════ */
+function animCount(el, target) {
+  const dur = 2000, start = performance.now();
+  (function tick(now) {
+    const p = Math.min((now - start) / dur, 1);
+    el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  })(start);
+}
+
+/* ═══════════════════════════════════
    1. CANVAS PARTICLE SYSTEM
 ═══════════════════════════════════ */
 var canvas = document.getElementById('bgCanvas');
@@ -176,8 +190,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Match top-level links by their href filename
     document.querySelectorAll('.nav-links > li > a').forEach(function (a) {
       var href = a.getAttribute('href') || '';
-      var hrefPage = href.split('/').pop().split('#')[0] || 'index.html';
-      if (hrefPage === page) {
+      // Strict matching: only mark active if it's the exact page or a direct link to index.html
+      // Avoid matching anchors (#services) as active pages
+      if (href === page || (page === 'index.html' && href === 'index.html')) {
         a.classList.add('active');
       }
     });
@@ -187,9 +202,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var hrefPage = href.split('/').pop().split('#')[0];
       if (hrefPage && hrefPage === page) {
         a.classList.add('active');
-        // Also mark the parent Services link as active
+        // Parent Services link stays inactive on home page unless specifically viewing a sub-service
         var parentDropdown = a.closest('.has-dropdown');
-        if (parentDropdown) {
+        if (parentDropdown && page !== 'index.html') {
           var parentLink = parentDropdown.querySelector(':scope > a');
           if (parentLink) parentLink.classList.add('active');
         }
@@ -261,11 +276,41 @@ document.addEventListener('DOMContentLoaded', function () {
   // }
   
 /* ═══════════════════════════════════
-   5. MUTE TOGGLE
+   5. MUTE TOGGLE & AUTOPLAY FIX
 ═══════════════════════════════════ */
 const vid = document.getElementById('heroVideo');
 const muteBtn = document.getElementById('muteBtn');
 const muteIcon = document.getElementById('muteIcon');
+
+if (vid) {
+  // Force muted for autoplay (especially Firefox)
+  vid.muted = true;
+  
+  // Try to play immediately
+  const playAttempt = () => {
+    const playPromise = vid.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Autoplay was prevented. Waiting for user interaction.");
+      });
+    }
+  };
+
+  playAttempt();
+
+  // Robust fallback: Play as soon as user interacts with the page (Firefox fix)
+  const kickstartAutoplay = () => {
+    if (vid.paused) {
+      vid.play().then(() => {
+        window.removeEventListener('click', kickstartAutoplay);
+        window.removeEventListener('touchstart', kickstartAutoplay);
+      }).catch(() => {});
+    }
+  };
+  window.addEventListener('click', kickstartAutoplay);
+  window.addEventListener('touchstart', kickstartAutoplay);
+}
+
 if (muteBtn && vid && muteIcon) {
   muteBtn.addEventListener('click', () => {
     vid.muted = !vid.muted;
@@ -301,18 +346,8 @@ if (muteBtn && vid && muteIcon) {
   //     el.textContent = el.dataset.target;
   //   });
   // }
-/* ═══════════════════════════════════
-   6. ANIMATED COUNTERS
-═══════════════════════════════════ */
-function animCount(el, target) {
-  const dur = 2000, start = performance.now();
-  (function tick(now) {
-    const p = Math.min((now - start) / dur, 1);
-    el.textContent = Math.floor((1 - Math.pow(1 - p, 3)) * target);
-    if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target;
-  })(start);
-}
+  /* ══ 6. ANIMATED COUNTERS ══ */
+  // Function moved to global scope
 
   /* ══ 7. BUTTON RIPPLE EFFECT ══ */
   var btnFilled = document.getElementById('btnFilled');
